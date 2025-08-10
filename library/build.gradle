@@ -4,17 +4,18 @@ plugins {
     id 'maven-publish'
 }
 
-group = 'tachiyomiorg'
+group = 'com.github.tachiyomiorg'
 
 android {
-    compileSdkVersion 33
-    ndkVersion "26.2.11394342"
+    namespace 'tachiyomiorg.decoder'
+    compileSdkVersion 36
+    ndkVersion "28.2.13676358"
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 36
         versionCode 1
-        versionName "1.0"
+        versionName "1.1"
 
         consumerProguardFiles "consumer-rules.pro"
         externalNativeBuild {
@@ -53,9 +54,9 @@ afterEvaluate {
             // Creates a Maven publication called "release".
             release(MavenPublication) {
                 from components.release
-                groupId = 'tachiyomiorg'
+                groupId = 'com.github.tachiyomiorg'
                 artifactId = 'image-decoder'
-                version = '1.0'
+                version = '1.1'
             }
         }
     }
